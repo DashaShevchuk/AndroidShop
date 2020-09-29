@@ -9,11 +9,19 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your name"
         android:inputType="textPersonName"/>
-    
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your email"
+        android:inputType="textPersonName"/>
+
      <RelativeLayout
          android:layout_width="match_parent"
          android:layout_height="wrap_content">
@@ -51,35 +59,102 @@
     </Spinner>
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/product1"
+        android:src="@drawable/pizza"
         android:layout_gravity="center_horizontal"
         android:scaleType="centerCrop"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="205dp"
+            android:layout_marginTop="20dp"
+            android:text="$"
+            android:textColor="#811309"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="20dp"
+            android:text="0.0"
+            android:textColor="#811309"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/priceTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total price"
-            android:textColor="#811309"
-            android:textSize="18dp"
-            android:textStyle="bold"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            />
+            android:text="Total price"
+            android:textColor="#811309"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/countMinus"
+            android:onClick="decreaseQuantity"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="20dp"
+            android:text="-" />
+
         <TextView
+            android:id="@+id/count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="20dp"
+            android:text="0"
+            android:textColor="#811309"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/countPlus"
+            android:onClick="increaseQuantity"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="20dp"
+            android:text="+" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="110dp">
+
+        <Button
+            android:id="@+id/addToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:onClick="addToCart"
+            android:text="Add to cart"
             android:textColor="#811309"
             android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="0"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            />
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="" />
     </RelativeLayout>
 </LinearLayout>
